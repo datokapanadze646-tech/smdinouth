@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>გადახდა</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #000; color: #fff; }
+        .checkout-container { max-width: 500px; margin: 20px auto; background: #1a1a1a; padding: 30px; border-radius: 10px; border: 1px solid #c5a059; }
+        .form-control { background: #0d0d0d; border: 1px solid #333; color: #fff; }
+        .btn-gold { background-color: #c5a059; color: #000; font-weight: bold; width: 100%; border: none; padding: 10px; text-decoration: none; display: block; text-align: center; }
+        .navbar-custom { background-color: #1a1a1a; padding: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-custom" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; background-color: #1a1a1a; border-bottom: 1px solid #333;">
+    <a href="https://www.tbcbank.ge/web/ka/web/guest/education" target="_blank" style="display: flex; align-items: center;">
+        <img src="data:image/png;base64,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" alt="TBC Education" style="height: 35px; width: auto;">
+    </a>
+
+     <ul style="display: flex; list-style: none; gap: 20px; padding: 0; margin: 0; align-items: center;">
+        <li><a href="index.html" style="text-decoration: none; color: gold; font-weight: bold; ">მთავარი</a></li>
+         <li><a href="shop.html" style="text-decoration: none; color: gold;">მაღაზია</a></li>
+         <li><a href="registracia.html" style="text-decoration: none; color: gold;">ავტორიზაცია</a></li>
+         <li><a href="serceva.html" style="text-decoration: none; color: gold; ">არჩევა</a></li>
+        <li><a href="propaili.html" style="text-decoration: none; color: gold; ">ჩემი პროფილი</a></li>
+    </ul>
+</nav>
+
+
+<div class="container">
+    <div class="checkout-container">
+        <h3 class="text-center mb-4" style="color: #c5a059;">გადახდის დეტალები</h3>
+
+        <div class="mb-4 p-3" style="border: 1px solid #333; border-radius: 5px;">
+            <p>პროდუქტი: <b id="product-name">იტვირთება...</b></p>
+            <p>ჯამი: <b id="product-price" style="color: #c5a059;">$0.00</b></p>
+        </div>
+
+        <form>
+            <div class="mb-3">
+                <label>სახელი და გვარი</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>ელ-ფოსტა</label>
+                <input type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>ტელეფონის ნომერი</label>
+                <input type="tel" class="form-control" placeholder="+995 XXX XXX XXX" required>
+            </div>
+            <div class="mb-3">
+                <label>საცხოვრებელი მისამართი</label>
+                <input type="text" class="form-control" placeholder="ქალაქი, ქუჩა, ბინა" required>
+            </div>
+
+            <div class="mb-3">
+                <label>ბარათის ნომერი</label>
+                <input type="text" class="form-control" placeholder="0000 0000 0000 0000" required>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label>ვადა</label>
+                    <input type="text" class="form-control" placeholder="MM/YY">
+                </div>
+                <div class="col-6 mb-3">
+                    <label>CVV</label>
+                    <input type="text" class="form-control" placeholder="123">
+                </div>
+            </div>
+
+            <a href="games.html" class="btn btn-gold">გადახდის დადასტურება</a>
+        </form>
+    </div>
+</div>
+
+<script>
+    // მონაცემების გამოჩენა
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('name')) {
+        document.getElementById('product-name').innerText = params.get('name');
+        document.getElementById('product-price').innerText = '$' + params.get('price');
+    }
+</script>
+
+</body>
+</html>
